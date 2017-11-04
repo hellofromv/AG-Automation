@@ -15,6 +15,7 @@ RSpec.configure do | config |
   end
 
   config.after(:each) do
+    sleep 3
     @driver.quit()
   end
 end
