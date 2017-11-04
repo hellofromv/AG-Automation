@@ -1,6 +1,5 @@
 class BasePage
   attr_accessor :driver
-
   def initialize(driver)
     @driver = driver
   end
@@ -17,9 +16,9 @@ class BasePage
     @driver.find_element(how, string).click
   end
 
-  def wait_until(type, name, timeout: 5)
+  def wait_until(how, string, timeout: 5)
     @wait = Selenium::WebDriver::Wait.new(:timeout => 7)
-    @wait.until { @driver.find_element(type, name).displayed? }
+    @wait.until { @driver.find_element(how, string).displayed? }
   end
 
   def quit()
